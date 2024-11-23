@@ -1,4 +1,5 @@
-# Flash Game Preservation Project
+# EggaZyoutatsu Preservation
+[EggaZyoutatsu Project](https://github.com/Draita/eggazyoutatsu)
 
 This project aims to preserve and make accessible a collection of Flash games by embedding them directly into an HTML file. The main components of the project are:
 
