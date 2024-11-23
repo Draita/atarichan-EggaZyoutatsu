@@ -187,14 +187,28 @@ html_template = """
             container.appendChild(player);
             player.load({{url: url}});
             document.getElementById('menu').style.display = 'none';
+            window.location.hash = game.name;
         }}
+
+        function loadGameFromHash() {{
+            const hash = window.location.hash.substring(1);
+            const gameIndex = games.findIndex(game => game.name === hash);
+            if (gameIndex !== -1) {{
+                loadGame(gameIndex);
+            }}
+        }}
+
+        window.addEventListener('load', loadGameFromHash);
+        window.addEventListener('hashchange', loadGameFromHash);
 
         const menuList = document.getElementById('menu').getElementsByTagName('ul')[0];
         games.forEach((game, index) => {{
             const li = document.createElement('li');
             const button = document.createElement('button');
             button.textContent = game.name;
-            button.onclick = () => loadGame(index);
+            button.onclick = () => {{
+                window.location.hash = game.name;
+            }};
             li.appendChild(button);
             menuList.appendChild(li);
         }});
@@ -212,4 +226,4 @@ with open('flash_games.json', 'r') as f:
 with open('index.html', 'w') as f:
     f.write(html_template.format(json_data=json_data))
 
-print("index.html file updated successfully with fullscreen checkbox and resizable game window.")
+print("index.html file updated successfully with routing functionality, fullscreen checkbox, and resizable game window.")
