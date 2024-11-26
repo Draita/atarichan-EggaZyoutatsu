@@ -32,6 +32,6 @@ Embedding the Flash files directly in the HTML is crucial for several reasons:
 - \`flash/\`: Directory containing the original .swf files
 - \`generate_json.py\`: Python script for compressing and encoding Flash files
 - \`flash_games.json\`: Generated JSON file containing compressed and encoded Flash games
-- \`index.html\`: Final HTML file with embedded games (to be created)
+- \`index.html\`: Final HTML file with embedded games
 
 By following this approach, we ensure that these classic Flash games remain accessible and playable for years to come, preserving an important part of internet gaming history.
